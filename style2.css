@@ -1,0 +1,178 @@
+/* Importando a fonte pixelada Press Start 2P */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Corpo do layout */
+body {
+  font-family: 'Press Start 2P', sans-serif; /* Fonte pixelada */
+  background-color: #000000; /* Fundo preto */
+  color: #f0f0f0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Título */
+h1 {
+  font-size: 2.5em; /* Diminuindo o tamanho do título */
+  color: #ffffff;
+  text-shadow: 0px 0px 25px rgba(215, 240, 104, 0.8);
+  margin-bottom: 20px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+/* Estilos do placar e indicador de turno */
+#score, #turnIndicator {
+  font-size: 1.2em; /* Diminuindo o tamanho do placar e indicador de turno */
+  color: #f0f0f0;
+  font-weight: 700;
+  margin: 20px 0;
+  text-shadow: 0px 0px 15px rgba(215, 240, 104, 0.8);
+}
+
+/* Estilos do tabuleiro */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 120px); /* Diminuindo o tamanho das células */
+  grid-template-rows: repeat(3, 120px); /* Diminuindo o tamanho das células */
+  gap: 10px; /* Diminuindo o espaço entre as células */
+  justify-content: center;
+  margin: 40px auto;
+}
+
+/* Estilos das células */
+.cell {
+  width: 120px; /* Diminuindo o tamanho das células */
+  height: 120px; /* Diminuindo o tamanho das células */
+  background: #2b2c44;
+  font-size: 2.5em; /* Diminuindo a fonte dentro das células */
+  font-weight: 800;
+  text-align: center;
+  border-radius: 15px;
+  border: 3px solid rgba(109, 128, 28, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+  color: #f0f0f0;
+  text-shadow: 0px 0px 15px rgba(243, 156, 18, 0.7);
+}
+
+/* Efeito de hover nas células */
+.cell:hover {
+  background: #3e3e5b;
+  transform: scale(1.1);
+  box-shadow: 0px 0px 30px rgba(243, 156, 18, 0.9);
+}
+
+/* Efeito de clique nas células */
+.cell:active {
+  transform: scale(0.95);
+}
+
+/* Estilos do botão */
+button {
+  padding: 14px 28px; /* Ajustando o padding do botão */
+  font-size: 1.2em; /* Diminuindo o tamanho da fonte do botão */
+  background-color: #1d8105;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-weight: 900;
+  border-radius: 25px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin-top: 25px;
+}
+
+button:hover {
+  background-color: #009921;
+  transform: scale(1.1);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Overlay para mostrar o vencedor */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.winner-text {
+  font-size: 1.8em; /* Diminuindo o tamanho da fonte do texto do vencedor */
+  font-weight: 900;
+  color: #2faf2b;
+  text-shadow: 0px 0px 30px #ffffff, 0px 0px 60px #ffffff(243, 156, 18, 0.6);
+  animation: celebrationEffect 1.5s infinite;
+  margin-bottom: 30px;
+  letter-spacing: 3px;
+}
+
+@keyframes celebrationEffect {
+  0% {
+    text-shadow: 0px 0px 40px #ffffff, 0px 0px 60px, 0px 0px 60px #246622(243, 156, 18, 0.6);
+  }
+  50% {
+    text-shadow: 0px 0px 40px #ffffff, 0px 0px 60px, 0px 0px 60px #246622(243, 156, 18, 0.6);
+  }
+  100% {
+    text-shadow: 0px 0px 40px #fefffe, 0px 0px 60px, 0px 0px 60px #246622(243, 156, 18, 0.6)
+  }
+}
+
+@keyframes particleEffect {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px) scale(0.8);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(95vh) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(100vh) scale(1.5);
+    }
+  }
+  
+  .particle {
+    position: absolute;
+    width: 10px; /* Tamanho das partículas */
+    height: 10px; /* Tamanho das partículas */
+    background-color: #ffffff;
+    border-radius: 50%;
+    animation: particleEffect 6s ease-out infinite; /* Duração maior para uma queda mais lenta */
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+  }
+  
+  
+  .particle {
+    position: absolute;
+    width: 10px; /* Tamanho das partículas */
+    height: 10px; /* Tamanho das partículas */
+    background-color: #ffffff;
+    border-radius: 50%;
+    animation: particleEffect 4s ease-out infinite; /* Infinite para o loop de partículas */
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+  }
+  

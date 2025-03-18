@@ -1,0 +1,177 @@
+/* Corpo do layout */
+body {
+  font-family: 'Press Start 2P', sans-serif;
+  background-color: #000000;
+  color: #f0f0f0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #ffffff;
+  text-shadow: 0px 0px 25px rgba(215, 240, 104, 0.8);
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
+#score, #turnIndicator {
+  font-size: 1.5em;
+  color: #f0f0f0;
+  font-weight: 700;
+  margin: 20px 0;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: repeat(3, 120px);
+  gap: 10px;
+  justify-content: center;
+  margin: 40px auto;
+}
+
+.cell {
+  width: 120px;
+  height: 120px;
+  background: #2b2c44;
+  font-size: 3em;
+  font-weight: 800;
+  text-align: center;
+  border-radius: 15px;
+  border: 3px solid rgba(109, 128, 28, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+  color: #f0f0f0;
+}
+
+.cell:hover {
+  background: #3e3e5b;
+  transform: scale(1.1);
+}
+
+.cell:active {
+  transform: scale(0.95);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.winner-text {
+  font-size: 2em;
+  font-weight: 900;
+  color: #2faf2b;
+  margin-bottom: 30px;
+  letter-spacing: 3px;
+}
+
+button {
+  padding: 16px 32px;
+  font-size: 1.3em;
+  background-color: #1d8105;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-weight: 900;
+  border-radius: 25px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #009921;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+/* Estilo do botão "Jogar Novamente" */
+#replayButton {
+    display: none;
+    padding: 14px 28px;
+    font-size: 1.2em;
+    background-color: #1d8105;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-weight: 900;
+    border-radius: 25px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: 25px;
+  }
+  
+  #replayButton:hover {
+    background-color: #009921;
+    transform: scale(1.1);
+  }
+  
+  #replayButton:active {
+    transform: scale(0.95);
+  }
+  
+  /* Estilo do overlay */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+  }
+  
+  .winner-text {
+    font-size: 1.8em;
+    font-weight: 900;
+    color: #2faf2b;
+    text-shadow: 0px 0px 30px #ffffff;
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+  }
+
+/* Estilo para as partículas */
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    animation: fall 3s infinite;
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(-100px) scale(1);
+    }
+    50% {
+      transform: translateY(50vh) scale(1.5);
+    }
+    100% {
+      transform: translateY(100vh) scale(1);
+    }
+  }
+  
+    

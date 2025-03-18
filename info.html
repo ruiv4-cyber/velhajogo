@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>info</title>
+  <link rel="stylesheet" href="style1.css">
+  <link rel="shortcut icon" href="icon2.png" />
+</head>
+<body>
+  <div class="menu-container">
+    <h1>Créditos</h1>
+    <p><li> participante 1</li></p>
+    <p><li> participante 2</li></p>
+    <p><li> participante 3</li></p>
+    <p><li> participante 4</li></p>
+    <p><li> participante 5</li></p>
+    <p><li> participante 6</li></p>
+    <p><li> participante 7</li></p>
+    <div class="button-container">
+      <a href="index.html">
+        <button class="menu-button">voltar</button>
+      </a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <!-- Adicionando o script para criar as partículas caindo -->
+  <script>
+    // Função para criar partículas caindo
+    function createParticle() {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      particle.style.left = Math.random() * window.innerWidth + 'px'; // Posição horizontal aleatória
+      particle.style.animationDuration = Math.random() * 2 + 3 + 's'; // Duração de queda aleatória
+      particle.style.animationTimingFunction = 'linear';
+      document.body.appendChild(particle);
+
+      // Após a animação, a partícula é removida da tela
+      setTimeout(() => {
+        particle.remove();
+      }, 5000); // Remover após 5 segundos (tempo suficiente para a animação)
+    }
+
+    // Gerar partículas de forma contínua
+    setInterval(createParticle, 100); // Gera uma partícula a cada 100ms
+  </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+/* Corpo do layout */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #1e1e2f;
+  color: #f0f0f0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: radial-gradient(circle, #3f3f6d, #222249);
+  overflow: hidden;
+}
+
+/* Título */
+h1 {
+  font-size: 3.5em;
+  color: #ffffff;
+  text-shadow: 0px 0px 25px rgba(255, 118, 117, 0.8);
+  margin-bottom: 20px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+/* Estilos do placar e indicador de turno */
+#score, #turnIndicator {
+  font-size: 1.5em;
+  color: #f0f0f0;
+  font-weight: 700;
+  margin: 20px 0;
+  text-shadow: 0px 0px 15px rgba(255, 118, 117, 0.6);
+}
+
+/* Estilos do tabuleiro */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 140px);
+  grid-template-rows: repeat(3, 140px);
+  gap: 15px;
+  justify-content: center;
+  margin: 40px auto;
+}
+
+/* Estilos das células */
+.cell {
+  width: 140px;
+  height: 140px;
+  background: #2b2c44;
+  font-size: 3.5em;
+  font-weight: 800;
+  text-align: center;
+  border-radius: 15px;
+  border: 3px solid #f39c12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+  color: #f0f0f0;
+  text-shadow: 0px 0px 15px rgba(243, 156, 18, 0.7);
+}
+
+/* Efeito de hover nas células */
+.cell:hover {
+  background: #3e3e5b;
+  transform: scale(1.1);
+  box-shadow: 0px 0px 30px rgba(243, 156, 18, 0.9);
+}
+
+/* Efeito de clique nas células */
+.cell:active {
+  transform: scale(0.95);
+}
+
+/* Estilos do botão */
+button {
+  padding: 16px 32px;
+  font-size: 1.3em;
+  background-color: #e74c3c;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-weight: 900;
+  border-radius: 25px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin-top: 25px;
+}
+
+button:hover {
+  background-color: #ff5e57;
+  transform: scale(1.1);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Overlay para mostrar o vencedor */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.winner-text {
+  font-size: 4em;
+  font-weight: 900;
+  color: #ff7675;
+  text-shadow: 0px 0px 30px rgba(255, 118, 117, 0.8), 0px 0px 60px rgba(243, 156, 18, 0.6);
+  animation: celebrationEffect 1.5s infinite;
+  margin-bottom: 30px;
+  letter-spacing: 3px;
+}
+
+@keyframes celebrationEffect {
+  0% {
+    text-shadow: 0px 0px 40px rgba(255, 118, 117, 0.8), 0px 0px 60px rgba(243, 156, 18, 0.6);
+  }
+  50% {
+    text-shadow: 0px 0px 60px rgba(243, 156, 18, 0.8), 0px 0px 100px rgba(255, 118, 117, 0.6);
+  }
+  100% {
+    text-shadow: 0px 0px 40px rgba(255, 118, 117, 0.8), 0px 0px 60px rgba(243, 156, 18, 0.6);
+  }
+}
+
+/* Efeito de partículas */
+@keyframes particleEffect {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #f39c12;
+  border-radius: 50%;
+  animation: particle-animation 1s ease-out forwards;
+}
+
+@keyframes particle-animation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}

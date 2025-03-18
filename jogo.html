@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo da Velha - x1</title>
+    <link rel="stylesheet" href="style1.css" />
+    <link rel="shortcut icon" href="icon2.png" />
+  </head>
+  <body>
+    <h1>Jogo da Velha</h1>
+
+    <div id="game">
+      <div id="score">Jogador 1 (X): 0 | Jogador 2 (O): 0</div>
+      <div id="turnIndicator">É a vez do Jogador 1 (X)</div>
+      <div class="board">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+    
+      <!-- Overlay e mensagens -->
+      <div class="overlay">
+        <div class="winner-text"></div>
+        <button id="restartButton" style="display: none;" onclick="goToMenu()">Voltar Menu</button>
+        <button id="replayButton" style="display: none;" onclick="replayGame()">Jogar Novamente</button>
+      </div>
+    </div>
+    
+    <!-- Botão para reiniciar a partida -->
+    <button onclick="resetGame()">Reiniciar Partida</button>
+    <a href="menu.html"><button class="menu-button">Voltar menu</button></a>
+
+    <script src="game.js"></script>
+  </body>
+</html>
